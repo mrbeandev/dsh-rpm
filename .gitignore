@@ -1,0 +1,7 @@
+node_modules/
+.cache/
+*.tgz
+.env
+.env.*
+!.env.example
+local.patch.yml

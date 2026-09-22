@@ -1,0 +1,65 @@
+{
+  "name": "dsh-rpm",
+  "version": "0.1.0",
+  "description": "Per-provider requests-per-minute rate limiting for DeepSeek Harness, with durable per-provider settings and a Models settings UI",
+  "type": "module",
+  "main": "./index.mjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrbeandev/dsh-rpm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mrbeandev/dsh-rpm/issues"
+  },
+  "homepage": "https://github.com/mrbeandev/dsh-rpm#readme",
+  "exports": {
+    ".": "./index.mjs",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "rate-limit",
+    "rpm",
+    "llm"
+  ],
+  "scripts": {
+    "build": "node scripts/build-client.mjs",
+    "test": "node --test test/*.test.mjs",
+    "prepack": "npm run build && npm test",
+    "pack:check": "npm pack --dry-run",
+    "prepublishOnly": "node scripts/check-release.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "limiter.mjs",
+    "client/index.mjs",
+    "lib/client.js",
+    "scripts/*.mjs",
+    "test/*.test.mjs",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-settings-models"
+      ]
+    }
+  }
+}
