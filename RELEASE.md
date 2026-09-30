@@ -2,10 +2,10 @@
 
 ## Current release: 0.2.0
 
-Prepared and pushed to `https://github.com/mrbeandev/dsh-rpm`. **Not yet
-published to npm** (0.1.0 was never published either); the owner publishes
-manually. The package name `dsh-rpm` was unclaimed on npm when last checked;
-verify ownership while logged into the intended npm account before publishing.
+Prepared and pushed to `https://github.com/mrbeandev/dsh-rpm`; **0.2.0 is not
+yet published to npm**. The owner publishes manually. `dsh-rpm@0.1.0` is
+already on npm (published 2026-09-22 by `mrbeandev`, dist-tag `latest`), so
+0.2.0 is an update to an owned package: publishing it moves `latest` to 0.2.0.
 
 0.2.0 highlights: DSH 0.1.5 through 0.2.x support (`settings.register` on
 0.1.5, volatile plugin Config on 0.1.7+), a dedicated **Settings → Rate

@@ -85,7 +85,10 @@ The tab uses whichever settings API the running DSH offers: `configForms`
   independent.
 - The profile entry id changed from `rpm-limits` to `dsh-rpm`. On DSH 0.1.5
   the stored limits (`settings.yaml`, section `dsh-rpm`) carry over. On DSH
-  0.1.7 and later, 0.1.0 never loaded, so there is nothing to migrate.
+  0.1.7 and later, 0.1.0 failed to load, so there are no stored limits to
+  migrate: set them again on the new tab.
+- Upgrade with `dsh plugin --profile web add dsh-rpm@latest`, then restart
+  DSH Web.
 
 ## Development
 
