@@ -1,7 +1,7 @@
 {
   "name": "dsh-rpm",
-  "version": "0.1.0",
-  "description": "Per-provider requests-per-minute rate limiting for DeepSeek Harness, with durable per-provider settings and a Models settings UI",
+  "version": "0.2.0",
+  "description": "Per-provider requests-per-minute rate limiting for DeepSeek Harness, with its own Settings tab",
   "type": "module",
   "main": "./index.mjs",
   "repository": {
@@ -18,7 +18,7 @@
     "./package.json": "./package.json"
   },
   "engines": {
-    "node": ">=24.0.0"
+    "node": "^22.19.0 || >=24.0.0"
   },
   "license": "MIT",
   "keywords": [
@@ -32,6 +32,7 @@
   "scripts": {
     "build": "node scripts/build-client.mjs",
     "test": "node --test test/*.test.mjs",
+    "test:integration": "node scripts/test-integration.mjs",
     "prepack": "npm run build && npm test",
     "pack:check": "npm pack --dry-run",
     "prepublishOnly": "node scripts/check-release.mjs"
@@ -45,6 +46,7 @@
     "test/*.test.mjs",
     "cordis.patch.yml",
     "README.md",
+    "RELEASE.md",
     "LICENSE"
   ],
   "publishConfig": {
